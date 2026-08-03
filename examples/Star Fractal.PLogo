@@ -1,0 +1,11 @@
+setxy -50, -90
+to star :size
+    if (:size <= 10)
+        [stop]
+    else
+        [repeat 5 [
+            fd :size
+            star :size/3
+            lt 216]]
+end
+star 190

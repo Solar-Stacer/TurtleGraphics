@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file alias="PLogo.md">PLogo.md</file>
+    <file alias="README.md">README.md</file>
+    <file alias="icon.png">icon.png</file>
+</qresource>
+</RCC>

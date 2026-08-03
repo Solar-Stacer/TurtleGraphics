@@ -1,0 +1,26 @@
+TO SIERPINSKI_A :LENGTH :RecursionLevel
+
+IF (:RecursionLevel > 0) [ 
+    RIGHT 30
+    REPEAT 3 [FORWARD :LENGTH RIGHT 120 ]
+    LEFT 30
+SIERPINSKI_A :LENGTH / 2, :RecursionLevel - 1
+    RIGHT 30
+    FORWARD :LENGTH / 2
+    LEFT 30
+SIERPINSKI_A :LENGTH / 2, :RecursionLevel - 1 
+    RIGHT 30
+    BACKWARD :LENGTH / 2
+    RIGHT 60
+    FORWARD :LENGTH / 2
+    LEFT 90
+SIERPINSKI_A :LENGTH / 2, :RecursionLevel - 1
+    LEFT 90
+    FORWARD :LENGTH / 2
+    RIGHT 90
+    ]
+
+end   
+
+SETXY -300/2, -100
+sierpinski_A 300, 5

@@ -1,0 +1,17 @@
+to draw_branch :branch_length
+    if (:branch_length < 5)
+        [stop]
+   
+    fd :branch_length
+    
+    rt 20
+    draw_branch (:branch_length - 15)
+    
+    lt 40
+    draw_branch (:branch_length - 15)
+    
+    rt 20
+    bd :branch_length
+end
+setxy 0, -200
+draw_branch 110

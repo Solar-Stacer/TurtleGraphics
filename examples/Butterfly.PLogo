@@ -1,0 +1,36 @@
+TO SpiralRecursion :n 
+   IF (:n < 1) [stop] 
+   FORWARD :n    
+   RIGHT 30
+   SpiralRecursion 0.95 * :n 
+END
+SpiralRecursion 80
+
+home
+TO SpiralRecursion :n 
+   IF (:n < 1) [stop] 
+   FORWARD :n    
+   LEFT 30
+   SpiralRecursion 0.95 * :n 
+END
+SpiralRecursion 80
+
+home
+backward 100
+TO SpiralRecursion :n 
+   IF (:n < 1) [stop] 
+   	Backward :n    
+   LEFT 30
+   SpiralRecursion 0.95 * :n 
+END
+SpiralRecursion 40
+
+home
+backward 100
+TO SpiralRecursion :n 
+   IF (:n < 1) [stop] 
+   	Backward :n    
+   RIGHT 30
+   SpiralRecursion 0.95 * :n 
+END
+SpiralRecursion 40

@@ -1,0 +1,246 @@
+
+; Draw a recursive tree
+
+to draw_branch :length
+    if (:length < 10)
+    [
+        stop
+    ]
+
+    wd (:length / 15)
+    fd :length
+
+    rt 25
+    draw_branch (:length - 12)
+
+    lt 50
+    draw_branch (:length - 12)
+
+    rt 25
+    bd :length
+end
+
+cc
+home
+pu
+setxy 0, -220
+pd
+
+col "brown"
+draw_branch 100
+
+; Draw a square using repeat
+
+col "blue"
+wd 2
+
+repeat 4 [
+    fd 60
+    rt 90
+]
+
+; Variables and arithmetic
+
+make :size 40
+make :count 0
+
+repeat 5 [
+    fd :size
+    rt 144
+    change :count (:count + 1)
+]
+
+; Test procedure parameters
+
+to polygon :sides :length
+    make :i 0
+
+    repeat :sides [
+        fd :length
+        rt (360 / :sides)
+        change :i (:i + 1)
+    ]
+end
+
+pu
+setxy 150, 100
+pd
+col "green"
+polygon 6, 40
+
+; Conditional
+
+if (5 * 4 == 20)
+[
+    col "red"
+    fd 50
+]
+else
+[
+    col "black"
+    fd 10
+]
+
+ht
+
+cc
+home
+pu
+setxy 0, -220
+pd
+
+; ==========================
+; Recursive Tree
+; ==========================
+
+to tree :len
+    if (:len < 10)
+    [
+        stop
+    ]
+
+    wd (:len / 12)
+    col "brown"
+
+    fd :len
+
+    rt 25
+    tree (:len - 15)
+
+    lt 50
+    tree (:len - 15)
+
+    rt 25
+    bd :len
+end
+
+tree 90
+
+; ==========================
+; House
+; ==========================
+
+pu
+setxy -180, -180
+pd
+
+wd 3
+col "blue"
+
+repeat 4 [
+    fd 100
+    rt 90
+]
+
+rt 45
+fd 70
+rt 90
+fd 70
+rt 45
+
+; Door
+
+pu
+setxy -150, -180
+pd
+
+repeat 2 [
+    fd 40
+    lt 90
+    fd 20
+    lt 90
+]
+
+; ==========================
+; Sun
+; ==========================
+
+pu
+setxy 170, 170
+pd
+
+to polygon :sides :size
+    repeat :sides [
+        fd :size
+        rt (360 / :sides)
+    ]
+end
+
+col "yellow"
+polygon 20, 8
+
+repeat 12 [
+    fd 25
+    bd 25
+    rt 30
+]
+
+; ==========================
+; Fence
+; ==========================
+
+pu
+setxy -220, -210
+pd
+
+make :posts 12
+
+repeat :posts [
+    fd 15
+    lt 90
+    fd 25
+    bd 25
+    rt 90
+    fd 15
+]
+
+; ==========================
+; Spiral
+; ==========================
+
+pu
+setxy 170, -120
+pd
+
+make :step 5
+
+repeat 30 [
+    fd :step
+    rt 20
+    change :step (:step + 2)
+]
+
+; ==========================
+; Condition Test
+; ==========================
+
+make :x 10
+
+if (:x > 5)
+[
+    col "green"
+    fd 40
+]
+else
+[
+    col "red"
+    fd 40
+]
+
+; ==========================
+; Nested Repeat
+; ==========================
+
+pu
+setxy 0, 0
+pd
+
+repeat 8 [
+    repeat 4 [
+        fd 20
+        rt 90
+    ]
+    rt 45
+]
+
+ht

@@ -508,6 +508,9 @@ class PLogoObject:
 
 
 if __name__ == "__main__":
-
+    code = """
+    make :c 54
+    fd :c * 3
+    """
     PLogoInt = PLogoObject()
     PLogoInt.executePLogo(code)
